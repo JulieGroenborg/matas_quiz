@@ -32,3 +32,7 @@
 .input + .span {
   background: #cbdad6;
 }
+
+.input:hover + .span:hover {
+  border: 2px solid #005b44;
+}
