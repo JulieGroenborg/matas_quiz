@@ -1,5 +1,6 @@
 "use client";
 import PrimaryButton from "@/components/PrimaryButton";
+import RadioButton from "@/components/RadioButton";
 import SquareCheckboxes from "@/components/SquareCheckboxes";
 import SquareRadioButtons from "@/components/SquareRadioButtons";
 import { useState } from "react";
@@ -34,6 +35,7 @@ export default function Home() {
         Næste
       </button>
       <hr className="mb-48" />
+      <RadioButton></RadioButton>
       <PrimaryButton bg="bg-green-800" text="Næste step" color="text-slate-50" width="w-4/5"></PrimaryButton>
       <PrimaryButton bg="bg-red-200" text="Udskift produkter"></PrimaryButton>
       <PrimaryButton bg="bg-green-800" text="Læg i kurv" color="text-slate-50" width="w-4/5"></PrimaryButton>
