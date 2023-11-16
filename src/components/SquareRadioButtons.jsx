@@ -12,7 +12,7 @@ export default function SquareRadioButtons() {
   return (
     <form className="flex pt-8 mb-14 place-content-center">
       <label className={`${styles.label}`}>
-        <input onChange={onChange} checked={selectedValue === "true"} value="truhhe" className={styles.input} type="radio" name="select" />
+        <input onChange={onChange} checked={selectedValue === "true"} value="true" className={styles.input} type="radio" name="select" />
         <span className={styles.span}>Ja</span>
       </label>
       <label className={`${styles.label} ml-5`}>
