@@ -72,6 +72,54 @@ export default function Home() {
             />
           </section>
         )}
+        {visible === 5 && (
+          <section>
+            <h3>Hvad skal den 1. adventsgaven koste?</h3>
+            <RadioButton5 text1="Under 75 kr." text2="75-250DKK" text3="250-400DKK" text4="Over 400DKK" text5="Spring 1. adventsgave over" name="first_gift" info="true" />
+            <PrimaryButton
+              text="Næste Step"
+              action={() => {
+                setVisible((o) => o + 1);
+              }}
+            />
+          </section>
+        )}
+        {visible === 6 && (
+          <section>
+            <h3>Hvad skal den 2. adventsgaven koste?</h3>
+            <RadioButton5 text1="Under 75 kr." text2="75-250DKK" text3="250-400DKK" text4="Over 400DKK" text5="Spring 2. adventsgave over" name="second_gift" info="true" />
+            <PrimaryButton
+              text="Næste Step"
+              action={() => {
+                setVisible((o) => o + 1);
+              }}
+            />
+          </section>
+        )}
+        {visible === 7 && (
+          <section>
+            <h3>Hvad skal den 3. adventsgaven koste?</h3>
+            <RadioButton5 text1="Under 75 kr." text2="75-250DKK" text3="250-400DKK" text4="Over 400DKK" text5="Spring 3. adventsgave over" name="second_gift" info="true" />
+            <PrimaryButton
+              text="Næste Step"
+              action={() => {
+                setVisible((o) => o + 1);
+              }}
+            />
+          </section>
+        )}
+        {visible === 8 && (
+          <section>
+            <h3>Hvad skal den 4. adventsgaven koste?</h3>
+            <RadioButton5 text1="Under 75 kr." text2="75-250DKK" text3="250-400DKK" text4="Over 400DKK" text5="Spring 4. adventsgave over" name="second_gift" info="true" />
+            <PrimaryButton
+              text="Næste Step"
+              action={() => {
+                setVisible((o) => o + 1);
+              }}
+            />
+          </section>
+        )}
       </QuizLayout>
 
       <hr className="mb-48" />
