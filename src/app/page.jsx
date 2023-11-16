@@ -29,7 +29,8 @@ export default function Home() {
         )}
         {visible === 2 && (
           <section>
-            <p>Side 2</p>
+            <h3>Hvad er alderen på gavemodtageren?</h3>
+            <RadioButton3 text1="Teenager" text2="20-40 år" text3="Voksen 40+ år" />
             <PrimaryButton
               text="Næste Step"
               action={() => {
