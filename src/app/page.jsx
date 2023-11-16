@@ -4,6 +4,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 import ProductCard from "@/components/ProductCard";
 import QuizLayout from "@/components/QuizLayout";
 import RadioButton3 from "@/components/RadioButton3";
+import RadioButton5 from "@/components/RadioButton5";
 import SecondaryButton from "@/components/SecondaryButton";
 import SquareRadioButtons from "@/components/SquareRadioButtons";
 import { useState } from "react";
@@ -18,7 +19,7 @@ export default function Home() {
         {visible === 1 && (
           <section>
             <h3>Hvilket køn har gavemodtageren?</h3>
-            <RadioButton3 text1="Kvinde" text2="Mand" text3="Andet" />
+            <RadioButton3 text1="Kvinde" text2="Mand" text3="Andet" name="gender" />
             <PrimaryButton
               text="Næste Step"
               action={() => {
