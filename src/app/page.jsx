@@ -3,8 +3,6 @@ import CheckboxButton from "@/components/CheckboxButton";
 import PrimaryButton from "@/components/PrimaryButton";
 import ProductCard from "@/components/ProductCard";
 import SecondaryButton from "@/components/SecondaryButton";
-
-import SquareCheckboxes from "@/components/SquareCheckboxes";
 import SquareRadioButtons from "@/components/SquareRadioButtons";
 import { useState } from "react";
 
@@ -46,7 +44,6 @@ export default function Home() {
       </div>
       <PrimaryButton></PrimaryButton>
       <SquareRadioButtons></SquareRadioButtons>
-      <SquareCheckboxes></SquareCheckboxes>
       <SecondaryButton></SecondaryButton>
       <CheckboxButton></CheckboxButton>
     </main>
