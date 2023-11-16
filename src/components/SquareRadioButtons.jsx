@@ -5,15 +5,11 @@ export default function SquareRadioButtons() {
     <div className="flex">
       <label className={styles.label}>
         <input className={styles.input} type="radio" name="select" />
-        <span className={styles.span}>Naturlig</span>
+        <span className={styles.span}>Ja</span>
       </label>
       <label className={styles.label}>
         <input className={styles.input} type="radio" name="select" />
-        <span className={styles.span}>Mat</span>
-      </label>
-      <label className={styles.label}>
-        <input className={styles.input} type="radio" name="select" />
-        <span className={styles.span}>Glødende</span>
+        <span className={styles.span}>Nej</span>
       </label>
     </div>
   );
