@@ -1,12 +1,12 @@
 import styles from "./RadioButton.module.css";
 
-export default function RadioButton3({ text1, text2, text3 }) {
+export default function RadioButton3({ text1, text2, text3, name }) {
   return (
     <>
-      <div className="flex flex-col pl-5 pt-3 mb-10">
+      <form className="flex flex-col pl-5 pt-3 mb-10">
         <div className={`${styles.radioinput}`}>
-          <input value="color-1" name="color" id="color-1" type="radio" />
-          <label className="flex" htmlFor="color-1">
+          <input value={text1} name={name} id={text1} type="radio" />
+          <label className="flex" htmlFor={text1}>
             <span className={styles.svg}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <g strokeWidth="0" id="SVGRepo_bgCarrier"></g>
@@ -20,12 +20,12 @@ export default function RadioButton3({ text1, text2, text3 }) {
                 </g>
               </svg>
             </span>
-            <div className="self-center ml-8">{text1}</div>
+            <p className="self-center ml-8">{text1}</p>
           </label>
         </div>
         <div className={`${styles.radioinput}`}>
-          <input value="color-2" name="color" id="color-2" type="radio" />
-          <label className="flex" htmlFor="color-2">
+          <input value={text2} name={name} id={text2} type="radio" />
+          <label className="flex" htmlFor={text2}>
             <span className={styles.svg}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <g strokeWidth="0" id="SVGRepo_bgCarrier"></g>
@@ -39,12 +39,12 @@ export default function RadioButton3({ text1, text2, text3 }) {
                 </g>
               </svg>
             </span>
-            <div className="self-center ml-8">{text2}</div>
+            <p className="self-center ml-8">{text2}</p>
           </label>
         </div>
         <div className={`${styles.radioinput}`}>
-          <input value="color-3" name="color" id="color-3" type="radio" />
-          <label className="flex" htmlFor="color-3">
+          <input value={text3} name={name} id={text3} type="radio" />
+          <label className="flex" htmlFor={text3}>
             <span className={styles.svg}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <g strokeWidth="0" id="SVGRepo_bgCarrier"></g>
@@ -58,10 +58,10 @@ export default function RadioButton3({ text1, text2, text3 }) {
                 </g>
               </svg>
             </span>
-            <div className="self-center ml-8">{text3}</div>
+            <p className="self-center ml-8">{text3}</p>
           </label>
         </div>
-      </div>
+      </form>
     </>
   );
 }
