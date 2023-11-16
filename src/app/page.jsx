@@ -43,14 +43,14 @@ export default function Home() {
         {visible === 3 && (
           <section>
             <h3>Hvilken kategori?</h3>
-            <div className="grid grid-cols-2 mb-10 pl-5">
+            <form className="grid grid-cols-2 mb-10 pl-5">
               <CheckboxButton text="Hudpleje" />
               <CheckboxButton text="Makeup" />
               <CheckboxButton text="Hår" />
               <CheckboxButton text="Parfumer" />
               <CheckboxButton text="Negle" />
               <CheckboxButton text="Skæg" />
-            </div>
+            </form>
             <PrimaryButton
               text="Næste Step"
               action={() => {
