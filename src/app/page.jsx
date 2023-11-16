@@ -13,6 +13,7 @@ export default function Home() {
   //metode til at få vist "flere sider" ligesom i miniquizzen
   const [visible, setVisible] = useState(1);
   const [stepCount, setStepCount] = useState(0);
+  const [details, setDetails] = useState();
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-gray-300">
       <QuizLayout currentStep={stepCount}>
@@ -64,14 +65,16 @@ export default function Home() {
         {visible === 4 && (
           <section>
             <h3>Kender du gavemodtagerens præferencer?</h3>
-            <SquareRadioButtons></SquareRadioButtons>
+            <SquareRadioButtons onChange={(value) => setDetails(value)}></SquareRadioButtons>
 
-            <RadioButton3></RadioButton3>
-
+            <div className="hidden">
+              <RadioButton3></RadioButton3>
+            </div>
             <PrimaryButton
               text="Vis resultat"
               action={() => {
                 setVisible((o) => o + 1);
+                onChange = { answer };
               }}
             />
           </section>
