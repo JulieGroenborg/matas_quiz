@@ -29,7 +29,6 @@ export default function Home() {
         )}
         {visible === 2 && (
           <section>
-            <p>Side 2</p>
             <PrimaryButton
               text="Næste Step"
               action={() => {
@@ -53,7 +52,11 @@ export default function Home() {
         )}
         {visible === 4 && (
           <section>
-            <p>Side 4</p>
+            <h3>Kender du gavemodtagerens præferencer?</h3>
+            <SquareRadioButtons></SquareRadioButtons>
+
+            <RadioButton3></RadioButton3>
+
             <PrimaryButton
               text="Vis resultat"
               action={() => {
