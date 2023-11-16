@@ -1,4 +1,6 @@
 .stripes {
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
   height: 30px;
   background: repeating-linear-gradient(135deg, #004634, #004634 8px, transparent 8px, transparent 16px);
 }

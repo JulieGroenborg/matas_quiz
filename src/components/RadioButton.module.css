@@ -15,7 +15,7 @@
 
 .radioinput input[type="radio"] + label {
   color: #333;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   font-size: 14px;
 }
 

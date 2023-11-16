@@ -31,9 +31,9 @@ export default function QuizLayout({ children, currentStep }) {
     },
   ];
   return (
-    <div className="w-full flex flex-col place-content-center content-center">
+    <div className="w-full flex flex-col place-content-center content-center bg-white rounded md:w-2/4">
       <header className="flex flex-col justify-items-center items-center">
-        <Image src={giftImage} alt="Gifts" priority />
+        <Image src={giftImage} alt="Gifts" priority className="w-full rounded-t" />
 
         <div className="w-fit mt-4">
           <ConfigProvider theme={{ token: { colorPrimary: "#004634" } }}>
@@ -41,8 +41,10 @@ export default function QuizLayout({ children, currentStep }) {
           </ConfigProvider>
         </div>
       </header>
-      {/* <h2>Adventsgaver</h2> */}
-      {children}
+      <div className="m-8 mt-0">
+        <h2 className="mb-8 text-xs">Adventsgaver</h2>
+        {children}
+      </div>
       <footer className={style.stripes}></footer>
     </div>
   );
