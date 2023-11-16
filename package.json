@@ -9,9 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nextui-org/checkbox": "^2.0.25",
-    "@nextui-org/react": "^2.2.9",
-    "framer-motion": "^10.16.5",
+    "antd": "^5.11.1",
     "next": "14.0.2",
     "react": "^18",
     "react-dom": "^18"

@@ -9,6 +9,7 @@ import { useState } from "react";
 export default function Home() {
   //metode til at få vist "flere sider" ligesom i miniquizzen
   const [visible, setVisible] = useState(1);
+  const [stepCount, setStepCount] = useState(0);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4">
       {visible === 1 && (
