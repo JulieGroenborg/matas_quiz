@@ -3,7 +3,7 @@ import CheckboxButton from "@/components/CheckboxButton";
 import PrimaryButton from "@/components/PrimaryButton";
 import ProductCard from "@/components/ProductCard";
 import SecondaryButton from "@/components/SecondaryButton";
-import RadioButton from "@/components/RadioButton";
+
 import SquareCheckboxes from "@/components/SquareCheckboxes";
 import SquareRadioButtons from "@/components/SquareRadioButtons";
 import { useState } from "react";
@@ -44,11 +44,11 @@ export default function Home() {
         <ProductCard></ProductCard>
         <ProductCard></ProductCard>
       </div>
-      <PrimaryButton bg="bg-green-800" text="Næste step" color="text-slate-50" width="w-4/5"></PrimaryButton>
-      <PrimaryButton bg="bg-red-200" text="Udskift produkter"></PrimaryButton>
-      <PrimaryButton bg="bg-green-800" text="Læg i kurv" color="text-slate-50" width="w-4/5"></PrimaryButton>
+      <PrimaryButton></PrimaryButton>
       <SquareRadioButtons></SquareRadioButtons>
       <SquareCheckboxes></SquareCheckboxes>
+      <SecondaryButton></SecondaryButton>
+      <CheckboxButton></CheckboxButton>
     </main>
   );
 }
