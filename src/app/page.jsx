@@ -1,3 +1,5 @@
+// api: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNib2F3YnZka2dieHV5aWh1eXpqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY4NTE1MzAsImV4cCI6MjAxMjQyNzUzMH0.Iq40XCZG1EvkMh2BD41TMTkAK97Ow5WwUwb_7tDsZeI
+// url: https://cboawbvdkgbxuyihuyzj.supabase.co/rest/v1/matas_products
 "use client";
 import CheckboxButton from "@/components/CheckboxButton";
 import PrimaryButton from "@/components/PrimaryButton";
@@ -7,14 +9,28 @@ import RadioButton3 from "@/components/RadioButton3";
 import RadioButton5 from "@/components/RadioButton5";
 import SecondaryButton from "@/components/SecondaryButton";
 import SquareRadioButtons from "@/components/SquareRadioButtons";
+// import Fetching from "@/components/Fetching";
+// import { Fetching } from "@/components/Fetching.js";
+
 // import next from "next";
 import { useState } from "react";
 
-export default function Home() {
+export default  function Home() {
   //metode til at få vist "flere sider" ligesom i miniquizzen
   const [visible, setVisible] = useState(1);
   const [stepCount, setStepCount] = useState(0);
   const [showDetails, setShowDetails] = useState("hide");
+  let headersList = {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNib2F3YnZka2dieHV5aWh1eXpqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY4NTE1MzAsImV4cCI6MjAxMjQyNzUzMH0.Iq40XCZG1EvkMh2BD41TMTkAK97Ow5WwUwb_7tDsZeI",
+    Prefer: "return=representation",
+  };
+  let response = await fetch(`https://cboawbvdkgbxuyihuyzj.supabase.co/rest/v1/matas_products`, {
+    method: "GET",
+    headers: headersList,
+  });
+
+  const data = await response.json();
+  console.log(data[0].brandname);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-gray-300">
