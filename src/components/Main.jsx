@@ -20,7 +20,8 @@ export default function Main({ data }) {
   const [visible, setVisible] = useState(1);
   const [stepCount, setStepCount] = useState(0);
   const [showDetails, setShowDetails] = useState("hide");
-  const [showGender, setShowGender] = useState("");
+  const [gender, setGender] = useState("");
+  const [age, setAge] = useState("");
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-gray-300">
@@ -28,7 +29,7 @@ export default function Main({ data }) {
         {visible === 1 && (
           <section>
             <h3>Hvilket køn har gavemodtageren?</h3>
-            <RadioButton3 text1="Kvinde" text2="Mand" text3="Andet" name="gender" showGender={showGender} onChange={setShowGender} />
+            <RadioButton3 text1="Kvinde" text2="Mand" text3="Andet" name="gender" onChange={setGender} />
             <PrimaryButton
               text="Næste Step"
               action={() => {
@@ -40,7 +41,7 @@ export default function Main({ data }) {
         {visible === 2 && (
           <section>
             <h3>Hvad er alderen på gavemodtageren?</h3>
-            <RadioButton3 text1="Teenager" text2="20-40 år" text3="Voksen 40+ år" />
+            <RadioButton3 text1="Teenager" text2="20-40 år" text3="Voksen 40+ år" name="age" onChange={setAge} />
             <PrimaryButton
               text="Næste Step"
               action={() => {
