@@ -47,7 +47,7 @@ export default function Home() {
         {visible === 3 && (
           <section>
             <h3>Hvilken kategori?</h3>
-            <form className="grid grid-cols-2 mb-10 pl-5">
+            <form className="grid grid-cols-2 mb-10">
               <CheckboxButton text="Hudpleje" />
               <CheckboxButton text="Makeup" />
               <CheckboxButton text="Hår" />

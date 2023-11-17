@@ -1,28 +1,29 @@
-/*  Til SquareCheckboxes.module.css  */
+/*  Til SquareRadioButton.module.css  */
 .label {
   display: block;
-  padding: 25px 62px 25px 62px;
+
   position: relative;
   /* padding-left: 20px; */
 }
 .label .input {
   display: none;
 }
-.label .span {
-  border: 1px solid #ccc;
-  width: 120px;
-  height: 40px;
+.label {
+  /* border: 1px solid #ccc; */
+  /* width: 115px;
+  height: 45px; */
   /* padding: 25% 60% 25% 60%; */
-  position: absolute;
+  /* position: absolute; */
   overflow: hidden;
   text-align: center;
-  line-height: 2.4;
+  line-height: 2.9;
   border-radius: 8px;
+  /* padding: 15px 50px 15px 50px; */
   left: 0;
   top: 50%;
-  margin-top: -7.5px;
+  /* margin-top: -7.5px; */
 }
-.input:checked + .span {
+/* .input:checked + .span {
   background: #cbdad6;
   border-color: #005b44;
   border-width: 2px;
@@ -31,8 +32,18 @@
 
 .input + .span {
   background: #cbdad6;
+} */
+
+.input:checked + .div {
+  background: #cbdad6;
+  border-color: #005b44;
+  border-width: 2px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25) inset;
 }
 
-.input:hover + .span:hover {
-  border: 2px solid #005b44;
+.div {
+  background: #cbdad6;
+  border-color: #cbdad6;
+  border-width: 2px;
+  border-radius: 8px;
 }
