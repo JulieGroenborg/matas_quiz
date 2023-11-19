@@ -135,18 +135,6 @@ export default function Main({ data }) {
           </section>
         )}
       </QuizLayout>
-
-      <hr className="mb-48" />
-      <div className="grid grid-cols-2">
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
-      </div>
-      <PrimaryButton></PrimaryButton>
-      <SquareRadioButtons></SquareRadioButtons>
-      <SecondaryButton></SecondaryButton>
-      <CheckboxButton></CheckboxButton>
     </main>
   );
 }
