@@ -21,7 +21,7 @@
 
 .radioinput input[type="radio"] + label span {
   display: inline-block;
-  width: 30px;
+  min-width: 30px;
   height: 30px;
   margin: -1px 4px 0 0;
   vertical-align: middle;
