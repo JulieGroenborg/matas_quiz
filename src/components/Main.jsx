@@ -80,7 +80,7 @@ export default function Main({ data }) {
             <h3>Kender du gavemodtagerens præferencer?</h3>
             <SquareRadioButtons showDetails={showDetails} onChange={setShowDetails}></SquareRadioButtons>
             <div className={showDetails === "show" ? "" : "hidden"}>
-              <RadioButton3></RadioButton3>
+              <RadioButton5></RadioButton5>
             </div>
             <PrimaryButton
               text="Næste step"
