@@ -9,19 +9,23 @@ import RadioButton3 from "@/components/RadioButton3";
 import RadioButton5 from "@/components/RadioButton5";
 import SecondaryButton from "@/components/SecondaryButton";
 import SquareRadioButtons from "@/components/SquareRadioButtons";
-// import Fetching from "@/components/Fetching";
-// import { Fetching } from "@/components/Fetching.js";
-
-// import next from "next";
 import { useState } from "react";
 
 export default function Main({ data }) {
   //metode til at få vist "flere sider" ligesom i miniquizzen
   const [visible, setVisible] = useState(1);
   const [stepCount, setStepCount] = useState(0);
-  const [showDetails, setShowDetails] = useState("hide");
+
   const [gender, setGender] = useState("");
   const [age, setAge] = useState("");
+
+  const [categories, setCategories] = useState([]);
+
+  const [showDetails, setShowDetails] = useState("hide");
+  const [firstPrice, setFirstPrice] = useState("");
+  const [secondPrice, setSecondPrice] = useState("");
+  const [thirdPrice, setThirdPrice] = useState("");
+  const [fourthPrice, setFourthPrice] = useState("");
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-gray-300">
@@ -55,12 +59,12 @@ export default function Main({ data }) {
           <section>
             <h3>Hvilken kategori?</h3>
             <form className="grid grid-cols-2 mb-10 pl-5">
-              <CheckboxButton text="Hudpleje" />
-              <CheckboxButton text="Makeup" />
-              <CheckboxButton text="Hår" />
-              <CheckboxButton text="Parfumer" />
-              <CheckboxButton text="Negle" />
-              <CheckboxButton text="Skæg" />
+              <CheckboxButton name="hudpleje" text="Hudpleje" onChange={setCategories} categories={categories} />
+              <CheckboxButton name="makeup" text="Makeup" onChange={setCategories} categories={categories} />
+              <CheckboxButton text="Hår" onChange={setCategories} categories={categories} />
+              <CheckboxButton text="Parfumer" onChange={setCategories} categories={categories} />
+              <CheckboxButton text="Negle" onChange={setCategories} categories={categories} />
+              <CheckboxButton text="Skæg" onChange={setCategories} categories={categories} />
             </form>
             <PrimaryButton
               text="Næste Step"
@@ -89,7 +93,7 @@ export default function Main({ data }) {
         {visible === 5 && (
           <section>
             <h3>Hvad skal den 1. adventsgaven koste?</h3>
-            <RadioButton5 text1="Under 75 kr." text2="75-250DKK" text3="250-400DKK" text4="Over 400DKK" text5="Spring 1. adventsgave over" name="first_gift" info="true" />
+            <RadioButton5 text1="Under 75 kr." text2="75-250 kr." text3="250-400 kr." text4="Over 400 kr." text5="Spring 1. adventsgave over" name="first_gift" info="true" onChange={setFirstPrice} />
             <PrimaryButton
               text="Næste Step"
               action={() => {
@@ -101,7 +105,7 @@ export default function Main({ data }) {
         {visible === 6 && (
           <section>
             <h3>Hvad skal den 2. adventsgaven koste?</h3>
-            <RadioButton5 text1="Under 75 kr." text2="75-250DKK" text3="250-400DKK" text4="Over 400DKK" text5="Spring 2. adventsgave over" name="second_gift" info="true" />
+            <RadioButton5 text1="Under 75 kr." text2="75-250 kr." text3="250-400 kr." text4="Over 400 kr." text5="Spring 2. adventsgave over" name="second_gift" info="true" onChange={setSecondPrice} />
             <PrimaryButton
               text="Næste Step"
               action={() => {
@@ -113,7 +117,7 @@ export default function Main({ data }) {
         {visible === 7 && (
           <section>
             <h3>Hvad skal den 3. adventsgaven koste?</h3>
-            <RadioButton5 text1="Under 75 kr." text2="75-250DKK" text3="250-400DKK" text4="Over 400DKK" text5="Spring 3. adventsgave over" name="second_gift" info="true" />
+            <RadioButton5 text1="Under 75 kr." text2="75-250 kr." text3="250-400 kr." text4="Over 400 kr." text5="Spring 3. adventsgave over" name="second_gift" info="true" onChange={setThirdPrice} />
             <PrimaryButton
               text="Næste Step"
               action={() => {
@@ -125,7 +129,7 @@ export default function Main({ data }) {
         {visible === 8 && (
           <section>
             <h3>Hvad skal den 4. adventsgaven koste?</h3>
-            <RadioButton5 text1="Under 75 kr." text2="75-250DKK" text3="250-400DKK" text4="Over 400DKK" text5="Spring 4. adventsgave over" name="second_gift" info="true" />
+            <RadioButton5 text1="Under 75 kr." text2="75-250 kr." text3="250-400 kr." text4="Over 400 kr." text5="Spring 4. adventsgave over" name="second_gift" info="true" onChange={setFourthPrice} />
             <PrimaryButton
               text="Næste Step"
               action={() => {
@@ -135,18 +139,6 @@ export default function Main({ data }) {
           </section>
         )}
       </QuizLayout>
-
-      <hr className="mb-48" />
-      <div className="grid grid-cols-2">
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
-        <ProductCard></ProductCard>
-      </div>
-      <PrimaryButton></PrimaryButton>
-      <SquareRadioButtons></SquareRadioButtons>
-      <SecondaryButton></SecondaryButton>
-      <CheckboxButton></CheckboxButton>
     </main>
   );
 }

@@ -1,6 +1,6 @@
 import styles from "./SquareRadioButtons.module.css";
 
-export default function SquareRadioButtons({ showDetails, onChange }) {
+export default function SquareRadioButtons({ onChange, showDetails }) {
   return (
     <form className="flex pt-8 mb-14 place-content-center">
       <label className={`${styles.label}`}>

@@ -1,11 +1,7 @@
 // api: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNib2F3YnZka2dieHV5aWh1eXpqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY4NTE1MzAsImV4cCI6MjAxMjQyNzUzMH0.Iq40XCZG1EvkMh2BD41TMTkAK97Ow5WwUwb_7tDsZeI
 // url: https://cboawbvdkgbxuyihuyzj.supabase.co/rest/v1/matas_products
-// import Fetching from "@/components/Fetching";
-// import { Fetching } from "@/components/Fetching.js";
 
 import Main from "@/components/Main";
-
-// import next from "next";
 export const dynamic = "force-dynamic";
 
 export default async function Home() {

@@ -2,12 +2,12 @@ import { Popover } from "antd";
 
 import styles from "./RadioButton.module.css";
 
-export default function RadioButton5({ text1, text2, text3, text4, text5, name, info }) {
+export default function RadioButton5({ text1, text2, text3, text4, text5, name, info, onChange }) {
   return (
     <>
       <form className="flex flex-col pl-5 pt-3 mb-10">
         <div className={`${styles.radioinput}`}>
-          <input value={text1} name={name} id={text1} type="radio" />
+          <input value={text1} name={name} id={text1} type="radio" onChange={() => onChange(text1)} />
           <label className="flex" htmlFor={text1}>
             <span className={styles.svg}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -26,7 +26,7 @@ export default function RadioButton5({ text1, text2, text3, text4, text5, name, 
           </label>
         </div>
         <div className={`${styles.radioinput}`}>
-          <input value={text2} name={name} id={text2} type="radio" />
+          <input value={text2} name={name} id={text2} type="radio" onChange={() => onChange(text2)} />
           <label className="flex" htmlFor={text2}>
             <span className={styles.svg}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -45,7 +45,7 @@ export default function RadioButton5({ text1, text2, text3, text4, text5, name, 
           </label>
         </div>
         <div className={`${styles.radioinput}`}>
-          <input value={text3} name={name} id={text3} type="radio" />
+          <input value={text3} name={name} id={text3} type="radio" onChange={() => onChange(text3)} />
           <label className="flex" htmlFor={text3}>
             <span className={styles.svg}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@ export default function RadioButton5({ text1, text2, text3, text4, text5, name, 
           </label>
         </div>
         <div className={`${styles.radioinput}`}>
-          <input value={text4} name={name} id={text4} type="radio" />
+          <input value={text4} name={name} id={text4} type="radio" onChange={() => onChange(text4)} />
           <label className="flex" htmlFor={text4}>
             <span className={styles.svg}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -83,7 +83,7 @@ export default function RadioButton5({ text1, text2, text3, text4, text5, name, 
           </label>
         </div>
         <div className={`${styles.radioinput}`}>
-          <input value={text5} name={name} id={text5} type="radio" />
+          <input value={text5} name={name} id={text5} type="radio" onChange={() => onChange(text5)} />
           <label className="flex" htmlFor={text5}>
             <span className={styles.svg}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
