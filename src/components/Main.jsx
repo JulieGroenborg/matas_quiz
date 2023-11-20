@@ -29,26 +29,45 @@ export default function Main({ data }) {
         {visible === 1 && (
           <section>
             <h3>Hvilket køn har gavemodtageren?</h3>
-            <RadioButton3 text1="Kvinde" text2="Mand" text3="Andet" name="gender" onChange={setGender} />
-            <PrimaryButton
-              text="Næste Step"
+            <RadioButton3
+              text1="Kvinde"
+              text2="Mand"
+              text3="Andet"
+              name="gender"
+              onChange={setGender}
               action={() => {
                 setVisible((o) => o + 1);
               }}
             />
+            {/* <PrimaryButton
+              text="Næste Step"
+              action={(e) => {
+                e.preventDefault();
+                setVisible((o) => o + 1);
+              }}
+            /> */}
           </section>
         )}
         {visible === 2 && (
           <section>
             <h3>Hvad er alderen på gavemodtageren?</h3>
-            <RadioButton3 text1="Teenager" text2="20-40 år" text3="Voksen 40+ år" name="age" onChange={setAge} />
-            <PrimaryButton
+            <RadioButton3
+              text1="Teenager"
+              text2="20-40 år"
+              text3="Voksen 40+ år"
+              name="age"
+              onChange={setAge}
+              action={() => {
+                setVisible((o) => o + 1);
+              }}
+            />
+            {/* <PrimaryButton
               text="Næste Step"
               action={() => {
                 setVisible((o) => o + 1);
                 setStepCount((o) => o + 1);
               }}
-            />
+            /> */}
           </section>
         )}
         {visible === 3 && (

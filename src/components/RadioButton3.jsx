@@ -1,11 +1,19 @@
+import { useState } from "react";
+import PrimaryButton from "./PrimaryButton";
 import styles from "./RadioButton.module.css";
 
-export default function RadioButton3({ text1, text2, text3, name, onChange }) {
+export default function RadioButton3({ text1, text2, text3, name, onChange, action }) {
+  const [clickStatus, setClickStatus] = useState("not clicked");
   return (
     <>
-      <form className="flex flex-col pl-5 pt-3 mb-10">
+      <div
+        className="flex flex-col pl-5 pt-3 mb-10"
+        onClick={() => {
+          setClickStatus("clicked");
+        }}
+      >
         <div className={`${styles.radioinput}`}>
-          <input value={text1} name={name} id={text1} type="radio" onChange={() => onChange(text1)} />
+          <input value={text1} name={name} id={text1} type="radio" onChange={() => onChange(text1)} required />
           <label className="flex" htmlFor={text1}>
             <span className={styles.svg}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -61,7 +69,8 @@ export default function RadioButton3({ text1, text2, text3, name, onChange }) {
             <p className="self-center ml-8">{text3}</p>
           </label>
         </div>
-      </form>
+        <PrimaryButton text="Næste side" clickStatus={clickStatus} setClickStatus={setClickStatus} action={action} />
+      </div>
     </>
   );
 }
