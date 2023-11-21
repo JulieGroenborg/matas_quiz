@@ -80,7 +80,19 @@ export default function Main({ data }) {
             <h3>Kender du gavemodtagerens præferencer?</h3>
             <SquareRadioButtons showDetails={showDetails} onChange={setShowDetails}></SquareRadioButtons>
             <div className={showDetails === "show" ? "" : "hidden"}>
-              <RadioButton5></RadioButton5>
+              <h4>Hvilken hudtype?</h4>
+              <RadioButton5 text1="Normal" text2="Tør" text3="Sensitiv" text4="Kombineret" text5="Ved ikke" name=""></RadioButton5>
+              <h4>Andre præferencer</h4>
+              <form className="grid grid-cols-2 mb-10 pl-5">
+                <CheckboxButton name="hudpleje" text="Allergivenlig" />
+                <CheckboxButton name="makeup" text="Vegansk" />
+                <CheckboxButton text="SPF" />
+                <CheckboxButton text="Anti-age" />
+                <CheckboxButton text="Svanemærket" />
+                <CheckboxButton text="Økologisk" />
+                <CheckboxButton text="Parfumefri" />
+                <CheckboxButton text="Parabenefri" />
+              </form>
             </div>
             <PrimaryButton
               text="Næste step"
