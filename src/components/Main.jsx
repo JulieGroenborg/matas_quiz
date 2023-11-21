@@ -33,19 +33,184 @@ export default function Main({ data }) {
       const newData = data.filter((item) => item.gender !== "kvinde");
       //Kategori: filtrerer efter category, og viser produktet hvis ordene i "categories" matcher med ordene i "item.category"
       const newData2 = newData.filter((item) => categories.includes(item.category));
-      console.log(newData2);
+
+      //Pris: filtrerer newData2 alt efter hvilken prisknap du har trykket på (på første pris-side)
+      if (firstPrice === "Under 75 kr.") {
+        const priceOne = newData2.filter((item) => item.price <= 75);
+        console.log("pris 1", priceOne);
+      } else if (firstPrice === "75-250 kr.") {
+        const priceOne = newData2.filter((item) => item.price >= 75 && item.price <= 250);
+      } else if (firstPrice === "250-400 kr.") {
+        const priceOne = newData2.filter((item) => item.price >= 250 && item.price <= 400);
+      } else if (firstPrice === "Over 400 kr.") {
+        const priceOne = newData2.filter((item) => item.price >= 400);
+      } else {
+        const priceOne = [];
+      }
+
+      //Pris: filtrerer newData2 alt efter hvilken prisknap du har trykket på (på anden pris-side)
+      if (secondPrice === "Under 75 kr.") {
+        const priceTwo = newData2.filter((item) => item.price <= 75);
+        console.log("pris 2", priceTwo);
+      } else if (secondPrice === "75-250 kr.") {
+        const priceTwo = newData2.filter((item) => item.price >= 75 && item.price <= 250);
+      } else if (secondPrice === "250-400 kr.") {
+        const priceTwo = newData2.filter((item) => item.price >= 250 && item.price <= 400);
+      } else if (secondPrice === "Over 400 kr.") {
+        const priceTwo = newData2.filter((item) => item.price >= 400);
+      } else {
+        const priceTwo = [];
+      }
+
+      //Pris: filtrerer newData2 alt efter hvilken prisknap du har trykket på (på tredje pris-side)
+      if (thirdPrice === "Under 75 kr.") {
+        const priceThree = newData2.filter((item) => item.price <= 75);
+        console.log("pris 3", priceThree);
+      } else if (thirdPrice === "75-250 kr.") {
+        const priceThree = newData2.filter((item) => item.price >= 75 && item.price <= 250);
+      } else if (thirdPrice === "250-400 kr.") {
+        const priceThree = newData2.filter((item) => item.price >= 250 && item.price <= 400);
+      } else if (thirdPrice === "Over 400 kr.") {
+        const priceThree = newData2.filter((item) => item.price >= 400);
+      } else {
+        const priceThree = [];
+      }
+
+      //Pris: filtrerer newData2 alt efter hvilken prisknap du har trykket på (på 4. pris-side)
+      if (fourthPrice === "Under 75 kr.") {
+        const priceFourth = newData2.filter((item) => item.price <= 75);
+        console.log("pris 4", priceFourth);
+      } else if (fourthPrice === "75-250 kr.") {
+        const priceFourth = newData2.filter((item) => item.price >= 75 && item.price <= 250);
+      } else if (fourthPrice === "250-400 kr.") {
+        const priceFourth = newData2.filter((item) => item.price >= 250 && item.price <= 400);
+      } else if (fourthPrice === "Over 400 kr.") {
+        const priceFourth = newData2.filter((item) => item.price >= 400);
+      } else {
+        const priceFourth = [];
+      }
     } else if (gender === "kvinde") {
       //Køn: filtrerer efter køn, og viser kun produkter til kvinder
       const newData = data.filter((item) => item.gender !== "mand");
       //Kategori: filtrerer efter category, og viser produktet hvis ordene i "categories" matcher med ordene i "item.category"
       const newData2 = newData.filter((item) => categories.includes(item.category));
-      console.log(newData2);
+
+      //Pris: filtrerer newData2 alt efter hvilken prisknap du har trykket på (på første pris-side)
+      if (firstPrice === "Under 75 kr.") {
+        const priceOne = newData2.filter((item) => item.price <= 75);
+        console.log("pris 1", priceOne);
+      } else if (firstPrice === "75-250 kr.") {
+        const priceOne = newData2.filter((item) => item.price >= 75 && item.price <= 250);
+      } else if (firstPrice === "250-400 kr.") {
+        const priceOne = newData2.filter((item) => item.price >= 250 && item.price <= 400);
+      } else if (firstPrice === "Over 400 kr.") {
+        const priceOne = newData2.filter((item) => item.price >= 400);
+      } else {
+        const priceOne = [];
+      }
+
+      //Pris: filtrerer newData2 alt efter hvilken prisknap du har trykket på (på anden pris-side)
+      if (secondPrice === "Under 75 kr.") {
+        const priceTwo = newData2.filter((item) => item.price <= 75);
+      } else if (secondPrice === "75-250 kr.") {
+        const priceTwo = newData2.filter((item) => item.price >= 75 && item.price <= 250);
+        console.log("pris 2", priceTwo);
+      } else if (secondPrice === "250-400 kr.") {
+        const priceTwo = newData2.filter((item) => item.price >= 250 && item.price <= 400);
+      } else if (secondPrice === "Over 400 kr.") {
+        const priceTwo = newData2.filter((item) => item.price >= 400);
+      } else {
+        const priceTwo = [];
+      }
+
+      //Pris: filtrerer newData2 alt efter hvilken prisknap du har trykket på (på tredje pris-side)
+      if (thirdPrice === "Under 75 kr.") {
+        const priceThree = newData2.filter((item) => item.price <= 75);
+      } else if (thirdPrice === "75-250 kr.") {
+        const priceThree = newData2.filter((item) => item.price >= 75 && item.price <= 250);
+      } else if (thirdPrice === "250-400 kr.") {
+        const priceThree = newData2.filter((item) => item.price >= 250 && item.price <= 400);
+        console.log("pris 3", priceThree);
+      } else if (thirdPrice === "Over 400 kr.") {
+        const priceThree = newData2.filter((item) => item.price >= 400);
+      } else {
+        const priceThree = [];
+      }
+
+      //Pris: filtrerer newData2 alt efter hvilken prisknap du har trykket på (på 4. pris-side)
+      if (fourthPrice === "Under 75 kr.") {
+        const priceFourth = newData2.filter((item) => item.price <= 75);
+      } else if (fourthPrice === "75-250 kr.") {
+        const priceFourth = newData2.filter((item) => item.price >= 75 && item.price <= 250);
+      } else if (fourthPrice === "250-400 kr.") {
+        const priceFourth = newData2.filter((item) => item.price >= 250 && item.price <= 400);
+      } else if (fourthPrice === "Over 400 kr.") {
+        const priceFourth = newData2.filter((item) => item.price >= 400);
+        console.log("pris 4", priceFourth);
+      } else {
+        const priceFourth = [];
+      }
     } else if (gender === "neutral") {
       //Køn: filtrerer efter køn, og viser produkter til alle/neutral
       const newData = data.filter((item) => item);
       //Kategori: filtrerer efter category, og viser produktet hvis ordene i "categories" matcher med ordene i "item.category"
       const newData2 = newData.filter((item) => categories.includes(item.category));
-      console.log(newData2);
+
+      //Pris: filtrerer newData2 alt efter hvilken prisknap du har trykket på (på første pris-side)
+      if (firstPrice === "Under 75 kr.") {
+        const priceOne = newData2.filter((item) => item.price <= 75);
+        console.log("pris 1", priceOne);
+      } else if (firstPrice === "75-250 kr.") {
+        const priceOne = newData2.filter((item) => item.price >= 75 && item.price <= 250);
+      } else if (firstPrice === "250-400 kr.") {
+        const priceOne = newData2.filter((item) => item.price >= 250 && item.price <= 400);
+      } else if (firstPrice === "Over 400 kr.") {
+        const priceOne = newData2.filter((item) => item.price >= 400);
+      } else {
+        const priceOne = [];
+      }
+
+      //Pris: filtrerer newData2 alt efter hvilken prisknap du har trykket på (på anden pris-side)
+      if (secondPrice === "Under 75 kr.") {
+        const priceTwo = newData2.filter((item) => item.price <= 75);
+        console.log("pris 2", priceTwo);
+      } else if (secondPrice === "75-250 kr.") {
+        const priceTwo = newData2.filter((item) => item.price >= 75 && item.price <= 250);
+      } else if (secondPrice === "250-400 kr.") {
+        const priceTwo = newData2.filter((item) => item.price >= 250 && item.price <= 400);
+      } else if (secondPrice === "Over 400 kr.") {
+        const priceTwo = newData2.filter((item) => item.price >= 400);
+      } else {
+        const priceTwo = [];
+      }
+
+      //Pris: filtrerer newData2 alt efter hvilken prisknap du har trykket på (på tredje pris-side)
+      if (thirdPrice === "Under 75 kr.") {
+        const priceThree = newData2.filter((item) => item.price <= 75);
+        console.log("pris 3", priceThree);
+      } else if (thirdPrice === "75-250 kr.") {
+        const priceThree = newData2.filter((item) => item.price >= 75 && item.price <= 250);
+      } else if (thirdPrice === "250-400 kr.") {
+        const priceThree = newData2.filter((item) => item.price >= 250 && item.price <= 400);
+      } else if (thirdPrice === "Over 400 kr.") {
+        const priceThree = newData2.filter((item) => item.price >= 400);
+      } else {
+        const priceThree = [];
+      }
+
+      //Pris: filtrerer newData2 alt efter hvilken prisknap du har trykket på (på 4. pris-side)
+      if (fourthPrice === "Under 75 kr.") {
+        const priceFourth = newData2.filter((item) => item.price <= 75);
+        console.log("pris 4", priceFourth);
+      } else if (fourthPrice === "75-250 kr.") {
+        const priceFourth = newData2.filter((item) => item.price >= 75 && item.price <= 250);
+      } else if (fourthPrice === "250-400 kr.") {
+        const priceFourth = newData2.filter((item) => item.price >= 250 && item.price <= 400);
+      } else if (fourthPrice === "Over 400 kr.") {
+        const priceFourth = newData2.filter((item) => item.price >= 400);
+      } else {
+        const priceFourth = [];
+      }
     }
   }
 
@@ -155,7 +320,7 @@ export default function Main({ data }) {
             <h3>Hvad skal den 4. adventsgaven koste?</h3>
             <RadioButton5 text1="Under 75 kr." text2="75-250 kr." text3="250-400 kr." text4="Over 400 kr." text5="Spring 4. adventsgave over" name="second_gift" info="true" onChange={setFourthPrice} />
             <PrimaryButton
-              text="Næste Step"
+              text="Udvælg gaver"
               action={() => {
                 setVisible((o) => o + 1);
               }}
