@@ -27,13 +27,37 @@ export default function Main({ data }) {
   const [thirdPrice, setThirdPrice] = useState("");
   const [fourthPrice, setFourthPrice] = useState("");
 
+  function filtreData() {
+    if (gender === "mand") {
+      //Køn: filtrerer efter køn, og viser kun produkter til mænd
+      const newData = data.filter((item) => item.gender !== "kvinde");
+      //Kategori: filtrerer efter category, og viser produktet hvis ordene i "categories" matcher med ordene i "item.category"
+      const newData2 = newData.filter((item) => categories.includes(item.category));
+      console.log(newData2);
+    } else if (gender === "kvinde") {
+      //Køn: filtrerer efter køn, og viser kun produkter til kvinder
+      const newData = data.filter((item) => item.gender !== "mand");
+      //Kategori: filtrerer efter category, og viser produktet hvis ordene i "categories" matcher med ordene i "item.category"
+      const newData2 = newData.filter((item) => categories.includes(item.category));
+      console.log(newData2);
+    } else if (gender === "neutral") {
+      //Køn: filtrerer efter køn, og viser produkter til alle/neutral
+      const newData = data.filter((item) => item);
+      //Kategori: filtrerer efter category, og viser produktet hvis ordene i "categories" matcher med ordene i "item.category"
+      const newData2 = newData.filter((item) => categories.includes(item.category));
+      console.log(newData2);
+    }
+  }
+
+  filtreData();
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-gray-300">
       <QuizLayout currentStep={stepCount}>
         {visible === 1 && (
           <section>
             <h3>Hvilket køn har gavemodtageren?</h3>
-            <RadioButton3 text1="Kvinde" text2="Mand" text3="Andet" name="gender" onChange={setGender} />
+            <RadioButton3 value1="kvinde" value2="mand" value3="neutral" text1="Kvinde" text2="Mand" text3="Andet" name="gender" onChange={setGender} />
             <PrimaryButton
               text="Næste Step"
               action={() => {

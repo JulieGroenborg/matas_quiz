@@ -18,7 +18,7 @@ export default function CheckboxButton({ text, name, onChange, categories }) {
           setIsNotChecked((state) => !state);
           //Jeg har lavet if/else, så der kan ske noget, når knappen er checked og un-checked
           if (!isNotChecked) {
-            console.log("Current categories:", categories);
+            // console.log("Current categories:", categories);
             //Tilføjer item til arrayet
             onChange((categories) => [...categories, text]);
           } else if (isNotChecked) {
