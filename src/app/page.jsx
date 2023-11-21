@@ -15,7 +15,7 @@ export default async function Home() {
   });
 
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
 
   return <Main data={data} />;
 }
