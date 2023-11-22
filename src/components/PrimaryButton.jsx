@@ -1,6 +1,6 @@
 export default function PrimaryButton({ text, action }) {
   return (
-    <button className="relative p-2 rounded m-2 bg-[#004634] text-slate-50 w-4/5" onClick={action}>
+    <button className="grid mr-auto ml-auto relative p-2 rounded m-2 bg-[#004634] text-slate-50 w-4/5" onClick={action}>
       <span>{text}</span>
       <svg className="absolute top-[15%] right-[5%]" width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path

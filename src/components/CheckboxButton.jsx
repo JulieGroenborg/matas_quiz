@@ -5,7 +5,7 @@ export default function CheckboxButton({ text, name, onChange, categories }) {
   const [isNotChecked, setIsNotChecked] = useState(false);
 
   return (
-    <label className={`${styles.label} mr-4 mb-4`}>
+    <label className={`${styles.label} mb-4`}>
       <input
         className={styles.input}
         type="checkbox"
@@ -27,7 +27,7 @@ export default function CheckboxButton({ text, name, onChange, categories }) {
           }
         }}
       />
-      <div className={styles.div}>{text}</div>
+      <div className={`${styles.div} mb-1 ml-3 mr-3`}>{text}</div>
     </label>
   );
 }
