@@ -160,14 +160,38 @@ export default function Main({ data }) {
       } else {
         priceFourth = [];
       }
-      giftOne = priceOne.filter((item) => item.category === "Hudpleje");
-      console.log("gave1", giftOne);
-      giftTwo = priceTwo.filter((item) => item.category === "Negle");
-      console.log("gave2", giftTwo);
-      giftThree = priceThree.filter((item) => item.category === "Makeup");
-      console.log("gave3", giftThree);
-      giftFourth = priceFourth[0];
-      console.log("gave4", giftFourth);
+      //Udvælger første gave random med priceOne´s længde som max (priceOne er et array, hvor de valgte køn, kategori og pris er gældende). GiftOne er så den ønskede gave.
+      giftOne = priceOne[Math.floor(Math.random() * priceOne.length)];
+      //console.log("random nr", Math.floor(Math.random() * priceOne.length));
+      console.log("gave1 er", giftOne);
+
+      giftTwo = priceTwo[Math.floor(Math.random() * priceTwo.length)];
+      console.log("Jeg har valgt", giftTwo);
+
+      //Her tjekker vi om giftTwo er blevet det samme produkt som giftOne, og hvis ja, så smider vi giftOne´s produkt ud af priceTwo´s array og vælger giftTwo igen
+      if (giftTwo.id === giftOne.id) {
+        const newPriceTwo = priceTwo.filter((item) => item.id !== giftTwo.id);
+        giftTwo = newPriceTwo[Math.floor(Math.random() * newPriceTwo.length)];
+      }
+      console.log("gave2 er", giftTwo);
+
+      giftThree = priceThree[Math.floor(Math.random() * priceThree.length)];
+      console.log("Jeg har valgt", giftThree);
+
+      //Her tjekker vi om giftThree er blevet det samme produkt som giftOne eller two, og hvis ja, så smider vi giftOne´s/two´s produkt ud af priceThree´s array og vælger giftThree igen
+      if (giftThree.id === giftOne.id || giftThree.id === giftTwo.id) {
+        const newPriceThree = priceThree.filter((item) => item.id !== giftOne.id && item.id !== giftTwo.id);
+        giftThree = newPriceThree[Math.floor(Math.random() * newPriceThree.length)];
+      }
+      console.log("gave3 er", giftThree);
+
+      giftFourth = priceFourth[Math.floor(Math.random() * priceFourth.length)];
+      console.log("Jeg har valgt", giftFourth);
+      if (giftFourth.id === giftOne.id || giftFourth.id === giftTwo.id || giftFourth.id === giftThree.id) {
+        const newPriceFourth = priceFourth.filter((item) => item.id !== giftOne.id && item.id !== giftTwo.id && item.id !== giftThree.id);
+        giftFourth = newPriceFourth[Math.floor(Math.random() * newPriceFourth.length)];
+      }
+      console.log("gave4 er", giftFourth);
     } else if (gender === "neutral") {
       //Køn: filtrerer efter køn, og viser produkter til alle/neutral
       const newData = data.filter((item) => item);
@@ -230,6 +254,23 @@ export default function Main({ data }) {
         priceFourth = [];
       }
     }
+    return (
+      <section>
+        <h3>Her er dine udvalgte adventsgaver</h3>
+        <div className="grid grid-cols-2">
+          <ProductCard gift={giftOne} />
+          <ProductCard gift={giftTwo} />
+          <ProductCard gift={giftThree} />
+          <ProductCard gift={giftFourth} />
+        </div>
+        <PrimaryButton
+          text="Udvælg gaver"
+          action={() => {
+            setVisible((o) => o + 1);
+          }}
+        />
+      </section>
+    );
   }
 
   return (
@@ -350,25 +391,15 @@ export default function Main({ data }) {
             <PrimaryButton
               text="Udvælg gaver"
               action={() => {
+                // filtreData();
+                console.log("GiftOne fra main", giftOne);
                 setVisible((o) => o + 1);
-                filtreData();
               }}
             />
           </section>
         )}
-        {visible === 9 && (
-          <section>
-            <h3>Her er dine udvalgte adventsgaver</h3>
-            <ProductCard productName={giftOne[0].productName} brandName={giftOne[0].brandName} price={giftOne[0].price} image={giftOne[0].image} />
-            <PrimaryButton
-              text="Udvælg gaver"
-              action={() => {
-                setVisible((o) => o + 1);
-                filtreData();
-              }}
-            />
-          </section>
-        )}
+        {/* && i denne situation betyder "hvis visible===9, så eksekvér filtreData()"  */}
+        {visible === 9 && filtreData()}
       </QuizLayout>
     </main>
   );
