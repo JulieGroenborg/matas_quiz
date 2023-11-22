@@ -262,7 +262,7 @@ export default function Main({ data }) {
           <ProductCard gift={giftFourth} />
         </div>
         <PrimaryButton
-          text="Udvælg gaver"
+          text="Se resultater"
           action={() => {
             setVisible((o) => o + 1);
           }}
@@ -300,7 +300,7 @@ export default function Main({ data }) {
         )}
         {visible === 3 && (
           <section>
-            <h3>Hvilken kategori?</h3>
+            <h3>Vælg én eller flere kategorier</h3>
             <form className="grid grid-cols-2 mb-10 pl-5">
               <CheckboxButton name="hudpleje" text="Hudpleje" onChange={setCategories} categories={categories} />
               <CheckboxButton name="makeup" text="Makeup" onChange={setCategories} categories={categories} />
