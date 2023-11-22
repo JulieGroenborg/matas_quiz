@@ -41,7 +41,7 @@ export default function QuizLayout({ children, currentStep }) {
           </svg>
         </div>
         <div className="w-fit mt-4">
-          <ConfigProvider theme={{ token: { colorPrimary: "#004634" } }}>
+          <ConfigProvider theme={{ token: { colorPrimary: "#004634", colorText: "#ffffff", colorTextDescription: "#ffffff" } }}>
             <Steps items={steps} current={currentStep} labelPlacement="vertical" className={style.svg} size="small" />
           </ConfigProvider>
         </div>
