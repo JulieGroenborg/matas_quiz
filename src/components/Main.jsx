@@ -255,12 +255,15 @@ export default function Main({ data }) {
     return (
       <section>
         <h3>Her er dine udvalgte adventsgaver</h3>
-        <div className="grid grid-cols-2 mb-16 ">
+        <div className="grid grid-cols-2 mb-3 ">
           <ProductCard gift={giftOne} />
           <ProductCard gift={giftTwo} />
           <ProductCard gift={giftThree} />
           <ProductCard gift={giftFourth} />
         </div>
+        <p className="mb-5 ml-12">Er der nogle produkter, du vil skifte ud? Klik på dem du vil udskifte og klik derefter på knappen herunder</p>
+        <SecondaryButton />
+        <p className="mb-5 ml-12">Er du tilfreds med dine valg?</p>
         <PrimaryButton
           text="Se resultater"
           action={() => {
